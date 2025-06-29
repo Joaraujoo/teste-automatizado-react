@@ -1,7 +1,6 @@
 import './App.css'
 import { useState } from 'react'
 import { Button } from './button'
-import { Posts } from './posts'
 
 export default function App(){
 

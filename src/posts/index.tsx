@@ -26,7 +26,7 @@ export function Posts(){
 
             {users && users.map((user) => (
                 <div key={user.id}>
-                    <p>nome: {user.name}</p>
+                    <p>{user.name}</p>
                     <strong>user: {user.email}</strong>
                 </div>
             ))}
