@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 
+
 export default function User(){
 
     const [name, setName] = useState("")
@@ -20,6 +21,8 @@ export default function User(){
                 <br />
 
                 {user !== "" && <strong>Usuário online: {user}</strong>}
+
+                
         </div>
     )
 }
