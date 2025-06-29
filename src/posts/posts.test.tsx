@@ -46,10 +46,18 @@ describe("posts components", () => {
 
         fireEvent.click(buttonElement)
 
-        const nameUser = await screen.findByText("Leanne Graham")
+        const nameUser = await screen.findByText("Leanne Graham")//Tenta encontrar o elemento por alguns milissegundos antes de desistir com erro.(espera na tela)
 
         expect(nameUser).toBeInTheDocument()
-
-        
     })
 })
+
+
+/*
+    | Método          | Tipo       | Quando usar                                                            |
+| --------------- | ---------- | ---------------------------------------------------------------------- |
+| `getByText()`   | síncrono   | Quando o texto já **deveria estar visível**                            |
+| `findByText()`  | assíncrono | Quando o texto vai aparecer depois de uma **requisição**, clique, etc. |
+| `queryByText()` | síncrono   | Para verificar **se o texto não existe** (sem lançar erro)             |
+
+*/

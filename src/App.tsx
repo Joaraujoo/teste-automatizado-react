@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import { Button } from './button'
+import { Posts } from './posts'
 
 export default function App(){
 
@@ -20,6 +21,11 @@ export default function App(){
       <Button onClick={() => alert("Clicouuuuuu")} disabled={false}>
         Clique aqui
       </Button>
+      
+      <br />
+      <br />
+
+      <Posts/>
 
 
      
