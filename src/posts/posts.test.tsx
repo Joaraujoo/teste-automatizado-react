@@ -5,6 +5,7 @@ import { setupServer } from 'msw/node'
 import "@testing-library/jest-dom"
 
 describe("posts components", () => {
+
     const server = setupServer(
         http.get("https://jsonplaceholder.typicode.com/users", async () => {
             return HttpResponse.json([
@@ -50,8 +51,17 @@ describe("posts components", () => {
 
         expect(nameUser).toBeInTheDocument()
     })
+
+    it("should fetch users when the component mount", async () => {
+        render(<Posts/>)
+
+        const nameUser = await screen.findByText("Leanne Graham")
+
+        expect(nameUser).toBeInTheDocument()
+    })
 })
 
+export default {}
 
 /*
     | Método          | Tipo       | Quando usar                                                            |

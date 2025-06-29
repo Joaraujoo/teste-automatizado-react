@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface UsersProps{
     id:number;
@@ -13,6 +13,14 @@ interface UsersProps{
 export function Posts(){
 
     const [users, setUsers] = useState<UsersProps[]>([])
+
+    useEffect(() => { 
+        async function loadUsers(){
+             const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+            setUsers(response.data)
+        }
+        loadUsers()
+    }, [])
 
     async function handleGetUsers(){
 
